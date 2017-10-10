@@ -1,0 +1,195 @@
+{% load static i18n %}
+
+{% url 'home' as home_url %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}Base Django Template{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+    {% block css %}
+    <!-- Latest compiled and minified Bootstrap 4 beta CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Your stuff: Third-party CSS libraries go here -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- This file stores project-specific CSS -->
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+
+    {% endblock %}
+
+  </head>
+
+  <body{% if request.get_full_path != home_url %} class="page-padding"{% endif %}>
+
+    <div class="m-b-1" id="home">
+  <!-- main nav -->
+  <nav id="navbar-spy" class="navbar fixed-top navbar-expand-md navbar-dark bg-dark scrolling-navbar
+{% if request.get_full_path != home_url %}pageNav{% endif %}">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'home' %}">S2 <span>Design</span></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link no-active" {% if request.get_full_path == home_url %}href="#home"{% else %}href="{% url 'home' %}"{% endif %}>Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" {% if request.get_full_path == home_url %}href="#sec1"{% else %}href="{% url 'home' %}#sec1"{% endif %}>Section 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" {% if request.get_full_path == home_url %}href="#sec2"{% else %}href="{% url 'home' %}#sec2"{% endif %}>Section 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" {% if request.get_full_path == home_url %}href="#sec3"{% else %}href="{% url 'home' %}#sec3"{% endif %}>Section 3</a>
+        </li>
+      </ul>
+
+      <!-- right nav -->
+      <ul class="navbar-nav navbar-right">
+        {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            {# URL provided by django-allauth/account/urls.py #}
+            <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
+          </li>
+          <li class="nav-item">
+            {# URL provided by django-allauth/account/urls.py #}
+            <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            {# URL provided by django-allauth/account/urls.py #}
+            <a id="sign-up-link" class="nav-link btn btn-info" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+          </li>
+          <li class="nav-item">
+            {# URL provided by django-allauth/account/urls.py #}
+            <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+          </li>
+        {% endif %}
+      </ul>
+      <!-- /end right nav -->
+    </div>
+  </nav>
+<!-- /end main nav -->
+</div>
+
+    <!-- show the jumbotron on the home page only -->
+    {% block splash %}
+    {% endblock splash %}
+
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
+          {% endfor %}
+      {% endif %}
+
+      {% block content %}
+        <p>Use this document as a way to quick start any new project.</p>
+      {% endblock content %}
+
+<footer class="page-footer center-on-small-only mdb-color lighten-3">
+
+  <!--Footer Links-->
+  <div class="container">
+    <div class="row my-4">
+
+      <!--First column-->
+      <div class="col-md-4 col-lg-4">
+        <h5 class="title mb-4 font-bold">Footer Content</h5>
+        <p>Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident
+            voluptate esse quasi, veritatis totam voluptas nostrum. </p>
+      </div>
+      <!--/.First column-->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!--Second column-->
+      <div class="col-md-2 col-lg-2 ml-auto">
+          <h5 class="title mb-4 font-bold">About</h5>
+              <p><a {% if request.get_full_path == home_url %}href="#home"{% else %}href="{% url 'home' %}"{% endif %}>REWIND</a></p>
+              <p><a {% if request.get_full_path == home_url %}href="#sec1"{% else %}href="{% url 'home' %}#sec1"{% endif %}>SECTION 1</a></p>
+              <p><a {% if request.get_full_path == home_url %}href="#sec2"{% else %}href="{% url 'home' %}#sec2"{% endif %}>SECTION 2</a></p>
+              <p><a {% if request.get_full_path == home_url %}href="#sec3"{% else %}href="{% url 'home' %}#sec3"{% endif %}>SECTION 3</a></p>
+      </div>
+      <!--/.Second column-->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!--Third column-->
+      <div class="col-md-4 col-lg-3">
+          <h5 class="title mb-4 font-bold">Address</h5>
+          <!--Info-->
+          <p><i class="fa fa-home mr-3"></i> San Jose, CA 95125, US</p>
+          <p><i class="fa fa-envelope mr-3"></i> steve@steve-shead.com</p>
+          <p><i class="fa fa-phone mr-3"></i> + 01 408 555 6789</p>
+          <p><i class="fa fa-print mr-3"></i> + 01 408 555 7891</p>
+      </div>
+      <!--/.Third column-->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!--Fourth column-->
+      <div class="col-md-2 col-lg-2 text-center">
+          <h5 class="title mb-4 font-bold">Follow Us</h5>
+          <!--Social buttons-->
+          <div class="social-section mt-2 ">
+              <!--Facebook-->
+              <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
+              <!--Twitter-->
+              <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
+              <!--Google +-->
+              <a type="button" class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"></i></a>
+              <!--Dribbble-->
+              <a type="button" class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"></i></a>
+          </div>
+      </div>
+      <!--/.Fourth column-->
+
+    </div>
+  </div>
+  <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid text-center">
+            © {% now 'Y' %} Copyright: <a href="https://www.steve-shead.com"> Steve Shead </a>
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+
+    {% block modal %}{% endblock modal %}
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block javascript %}
+      <!-- Required by Bootstrap v4 beta -->
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+      <!-- Your stuff: Third-party javascript libraries go here -->
+
+      <!-- place project specific Javascript in this file -->
+      <script src="{% static 'js/project.js' %}"></script>
+      <script>$('body').scrollspy({ target: '#navbar-spy' })</script>
+
+    {% endblock javascript %}
+  </body>
+</html>

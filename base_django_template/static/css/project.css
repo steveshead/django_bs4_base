@@ -1,0 +1,193 @@
+/* These styles are generated from project.scss. */
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+/* Display django-debug-toolbar.
+   See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742
+   and https://github.com/pydanny/cookiecutter-django/issues/317
+*/
+[hidden][style="display: block;"] {
+  display: block !important;
+}
+
+/* nav */
+.navbar-brand span {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #17a2b8;
+}
+
+/* MAIN CSS
+-------------------------------------------------- */
+
+p {
+  font-weight: lighter;
+}
+a {
+  color: #17a2b8;
+  -webkit-transition: all ease-in-out 0.3s;
+     -moz-transition: all ease-in-out 0.3s;
+      -ms-transition: all ease-in-out 0.3s;
+       -o-transition: all ease-in-out 0.3s;
+          transition: all ease-in-out 0.3s;
+}
+
+a:hover {
+  color: #138496;
+  text-decoration: none;
+}
+
+.btn {
+  border-radius: 0.2rem;
+}
+
+.page-padding {
+  padding-top: 8rem;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+  color: #17a2b8;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+}
+
+.nav-link.no-active {
+  color: #fff !important;
+}
+
+.nav-link.no-active:hover {
+  color: rgba(255,255,255,.75) !important;
+}
+
+.account-base {
+  padding-bottom: 100px;
+}
+
+/* JUMBOTRON
+-------------------------------------------------- */
+
+.jumbotron {
+    padding-top: 14rem;
+    padding-bottom: 12rem;
+}
+
+/* SECTIONS
+-------------------------------------------------- */
+
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-heading h1 {
+  margin-bottom: 0;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.section-heading p {
+  margin-top: 0;
+}
+
+/* SECTION TWO
+-------------------------------------------------- */
+
+.sec2 {
+  background: #e9ecef;
+}
+
+/* FOOTER
+-------------------------------------------------- */
+
+footer {
+  background: #343a40;
+  padding-top: 5rem;
+  padding-bottom: 0;
+  color: #f5f5f5;
+}
+
+footer a {
+  color: #f5f5f5;
+}
+
+.footer-copyright {
+  background: #222;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: lighter;
+}
+
+/* PAGE CSS
+-------------------------------------------------- */
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.marketing h2 {
+  font-weight: normal;
+}
+
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+.marketing .fa {
+  background: #17a2b8;
+  border-radius: 50%;
+  color: #f5f5f5;
+  border: 10px solid #f9f9f9;
+  box-shadow: 0 0 1px #999;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
