@@ -44,19 +44,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link no-active" {% if request.get_full_path == home_url %}href="#home"{% else %}href="{% url 'home' %}"{% endif %}>Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" {% if request.get_full_path == home_url %}href="#sec1"{% else %}href="{% url 'home' %}#sec1"{% endif %}>Section 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" {% if request.get_full_path == home_url %}href="#sec2"{% else %}href="{% url 'home' %}#sec2"{% endif %}>Section 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" {% if request.get_full_path == home_url %}href="#sec3"{% else %}href="{% url 'home' %}#sec3"{% endif %}>Section 3</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" {% if request.get_full_path == home_url %}href="#contact"{% else %}href="{% url 'home' %}#contact"{% endif %}>Contact</a>
+          <a class="nav-link no-active" href="{% url 'home' %}">BACK TO THE HOMEPAGE <span class="sr-only">(current)</span></a>
         </li>
       </ul>
 
@@ -148,14 +136,16 @@
       <div class="col-md-2 col-lg-2 text-center">
           <h5 class="title mb-4 font-bold">Follow Us</h5>
           <!--Social buttons-->
-          <div class="col-md-12">
-                    <ul class="social-network social-circle">
-                        <li><a href="#" class="icoFacebook mt-3" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="icoTwitter mt-3" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoGoogle mt-4" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#" class="icoLinkedin mt-4" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-				</div>
+          <div class="social-section mt-2 ">
+              <!--Facebook-->
+              <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
+              <!--Twitter-->
+              <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
+              <!--Google +-->
+              <a type="button" class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"></i></a>
+              <!--Dribbble-->
+              <a type="button" class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"></i></a>
+          </div>
       </div>
       <!--/.Fourth column-->
 

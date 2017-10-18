@@ -4,10 +4,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from base_django_template import views
 
 urlpatterns = [
+    url(r'^$', views.contact, name='contact'),
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^page/$', TemplateView.as_view(template_name='pages/page.html'), name='page'),
+    url(r'^thank_you/$', TemplateView.as_view(template_name='pages/thank_you.html'), name='thank_you'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

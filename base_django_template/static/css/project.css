@@ -131,6 +131,19 @@ footer a {
 
 /* PAGE CSS
 -------------------------------------------------- */
+section.thank_you {
+  padding-top: 9rem !important;
+}
+
+section.thank_you h1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+.gmap {
+  border: 10px solid #fff;
+  box-shadow: 0 0 1px #888;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -158,24 +171,90 @@ footer a {
   box-shadow: 0 0 1px #999;
 }
 
+/* SOCIAL ICONS
+-------------------------------------------------- */
 
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+/* footer social icons */
+ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
+
+/* footer social icons */
+
+.social-network a.icoFacebook {
+	background-color:#3B5998;
 }
 
+.social-network a.icoTwitter {
+	background-color:#33ccff;
+}
+
+.social-network a.icoGoogle {
+	background-color:#BD3518;
+}
+
+.social-network a.icoLinkedin {
+	background-color:#007bb7;
+}
+
+.social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+  box-shadow: 0 0 6px #222;
+  background: #333;
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+}
+
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

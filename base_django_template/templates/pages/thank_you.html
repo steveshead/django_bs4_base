@@ -1,0 +1,23 @@
+{% extends "contact_base.html" %}
+
+{% block content %}
+
+<section class="thank_you pt-5">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+        <h1>Thank You!</h1>
+          <p class="lead">We have received your<strong> message.</strong></p>
+          <i class="fa fa-envelope-o fa-5x"></i>
+          <br />
+          <p class="pt-4 pb-3">We'll get back to you shortly.</p>
+        <p class="lead">
+          <a class="btn btn-info" href="/" role="button">Homepage</a>
+          <a class="btn btn-success" href="{% url 'account_signup' %}" role="button">Register</a>
+        </p>
+    </div>
+  </div>
+</div>
+</section>
+
+{% endblock content %}
